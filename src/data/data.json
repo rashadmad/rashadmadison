@@ -1,0 +1,114 @@
+    [
+      {
+        "id": 1,
+        "title": "React Fullstack Application",
+        "description": "Built a client in react.js for a SQL Rest API. This application has sign up and sign in functionality for users. It also allows users to create books, make changes to them, view and delete them. This application is one of the most challenging ones that I have made. Creating this gave me an understanding of front and backend technologies and how they communicate.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Fullstack-React-Application.png",
+        "imgAlt": "water",
+        "tech": ["HTML/CSS", "JavaScript"],
+        "live": "",
+        "source": "https://github.com/rashadmad/REACT-Fullstack-Application" 
+      },
+      {
+        "id": 2,
+        "title": "Rest API",
+        "description": "Utilizing Express.js and SQL I created a REST API that gives users CRUD functionalities over items in a school database. This was my first backend database. Creating this amplified my understand of software as a whole.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Rest-API.png",
+        "imgAlt": "water",
+        "tech": ["Express.js", "sqlite3", "Node.js"],
+        "live": "https://example.com/project2",
+        "source": "https://github.com/rashadmad/REST-API"
+      },
+      {
+        "id": 3,
+        "title": "React Image Gallery",
+        "description": "Utilizing React.js and Flickr's api I created a fully searchable listing of Flickr images. This was my first React project, it was definitely a challenge but I really enjoy creating modular components",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/Screenshot+2024-04-30+at+11.26.45+PM.png",
+        "imgAlt": "water",
+        "tech": ["React.js", "API"],
+        "live": "https://github.com/rashadmad/React-Gallery-App-project-7",
+        "source": "https://github.com/rashadmad/React-Gallery-App-project-7"
+      },
+      {
+        "id": 4,
+        "title": "Random Quote Generator",
+        "description": "Project that displays random famous quotes from many African American Leaders. It was a requirement of the TAP(Treehouse apprenticeship program). This project gave me the opportunity to get used to dealing with JSON like data structures",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Random-Quote-Generator.png",
+        "imgAlt": "water",
+        "tech": ["JQuery", "HTML5/CSS", "JavaScript"],
+        "live": "https://rashadmad.github.io/Treehouse-project-quote-generator-unit-01",
+        "source": "https://github.com/rashadmad/Treehouse-project-quote-generator-unit-01"
+      },
+      {
+        "id": 5,
+        "title": "Random User API Project",
+        "description": "Pagination of multiple student list items with search. This project continues the trend of dealing with common obstacles with data. Usually one would use a library for a pagination and search. But getting the opportunity to see how all of that goes together was eye opening.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Public-API.png",
+        "imgAlt": "water",
+        "tech": ["JSON", "JavaScript"],
+        "live": "https://rashadmad.github.io/Public-API-Requests-project-5",
+        "source": "https://github.com/rashadmad/Public-API-Requests-project-5"
+      },
+      {
+        "id": 6,
+        "title": "Fitness site",
+        "description": "Example of some of my client work. I developed a website for the Fulton Fithouse gym. This site was completed in Bootstrap with a helping hand of JavScript. An important part of this project was discussing with the client and ascertaining his specific business needs.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-FitnessSite.png",
+        "imgAlt": "water",
+        "tech": ["HTML5/CSS", "JavaScript"],
+        "live": "https://rashadmad.github.io/FitnessSite/",
+        "source": "https://github.com/rashadmad/FitnessSite/"
+      },
+      {
+        "id": 7,
+        "title": "Phrase Hunter",
+        "description": "Similar to wheel of fortune this is a fully functional game where you guess. This project called for me to utilize object oriented programing with JavaScript. I had to create a negative feedback system(for incorrect guesses), multiple states and gives the user the ability to add data to it.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Phrase-Hunter.png",
+        "imgAlt": "water",
+        "tech": ["HTML/CSS", "JavaScript"],
+        "live": "https://example.com/project7",
+        "source": "https://github.com/example/project7"
+      },
+      {
+        "id": 8,
+        "title": "Pagination Project",
+        "description": "Pagination of multiple student list items with search. This project continues the trend of dealing with common obstacles with data. Usually one would use a library for a pagination and search. But getting the opportunity to see how all of that goes together was eye opening.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Pagination.png",
+        "imgAlt": "water",
+        "tech": ["JSON", "JavaScript"],
+        "live": "https://rashadmad.github.io/Treehouse-project-pagination-unit-02/",
+        "source": "https://github.com/rashadmad/Treehouse-project-pagination-unit-02"
+      },
+      {
+        "id": 9,
+        "title": "Classic Arcade Game Clone",
+        "description": "This game was my first experience with OOP in javScript. The game requires multiple changes to state as it has a game win and lose lifecycle.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Oop-Game.png",
+        "imgAlt": "water",
+        "tech": ["JSON", "JavaScript", "HTML/CSS"],
+        "live": "https://rashadmad.github.io/frontend-nanodegree-arcade-game/",
+        "source": "https://github.com/rashadmad/frontend-nanodegree-arcade-game"
+      },
+      {
+        "id": 10,
+        "title": "Interactive Form",
+        "description": "This interactive form project was a challenge for me. It truly pushed my dom-manipulation skills with vanilla JavScript. Form validation can surprisingly be complex. I appreciated the opportunity to learn regex. I was proud of events being disabled when another event during that same time was selected.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Interactive-Form.png",
+        "imgAlt": "water",
+        "tech": ["Flutter", "Dart"],
+        "live": "https://rashadmad.github.io/interactive-form-v2/", 
+        "source": "https://github.com/rashadmad/interactive-form-v2"
+      },
+      {
+        "id": 11,
+        "title": "Matching Game",
+        "description": "Card matching game that shows my knowledge of JavaScript and CSS animations.",
+        "img": "https://rashad-madison-images.s3.us-east-2.amazonaws.com/RashadMadison-Matching-Game.png",
+        "imgAlt": "Matching game",
+        "tech": ["JavaScript", "CSS"],
+        "live": "https://rashadmad.github.io/fend-project-memory-game",
+        "source": "https://github.com/rashadmad/fend-project-memory-game"
+      }
+    ]
+
+  

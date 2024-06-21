@@ -1,0 +1,30 @@
+# .DS_Store file
+.DS_Store
+
+# Node modules
+node_modules/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Compiled files
+*.js.map
+*.css.map
+*.gz
+*.zip
+*.tgz
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+*.jar
+*.war
+
+# Logs and temporary files
+*.log
+*.tmp
+*.tmp.*
+*.cache
