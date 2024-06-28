@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { XMarkIcon } from '@heroicons/react/20/solid';
+import { Link as GatsbyLink } from "gatsby";
 
 const Banner = ({ firstItem, secondItem, buttonText, link}) => {
 
@@ -28,7 +29,7 @@ const Banner = ({ firstItem, secondItem, buttonText, link}) => {
                 <svg viewBox="0 0 2 2" className="mx-2 inline h-0.5 w-0.5 fill-current" aria-hidden="true">
                   <circle cx={1} cy={1} r={1} />
                 </svg>
-                <button className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">{buttonText}<span aria-hidden="true"></span></button>
+                <GatsbyLink to="mailto: rashadmad@gmail.com" className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">{buttonText}<span aria-hidden="true"></span></GatsbyLink>
               </p>
             </div>
             <div className="flex flex-1 justify-end">

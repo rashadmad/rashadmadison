@@ -32,7 +32,7 @@ const BlogIndex = ({ data, location }) => {
 
             return (
               <li className="m-10" key={post.fields.slug}>
-                <img className="size-40" src={post.frontmatter.image} />
+                <img className="size-64 rounded-md" src={post.frontmatter.image} />
                 <article
                   className="post-list-item"
                   itemScope
@@ -58,7 +58,7 @@ const BlogIndex = ({ data, location }) => {
                   </section>
                 </article>
                 <GatsbyLink
-                  to="/blog"
+                  to={post.fields.slug}
                   className="no-underline bg-sky-400 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-md"
                 >
                   Read
