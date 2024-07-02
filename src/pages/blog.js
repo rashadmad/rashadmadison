@@ -21,17 +21,22 @@ const BlogIndex = ({ data, location }) => {
   return (
     <>
       <Nav page="blog"></Nav>
-      <div className="mt-20 mr-52 ml-52 ">
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">My Blog</h2>
-      <p class="mt-2 text-lg leading-8 text-gray-600">
-        Welcome to my blog, Follow me on my journey of hacking, building and learning in the world of the web 
-      </p>
-        <ol className="place-content-center mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3" style={{ listStyle: `none` }}>
+      <div id="portfolio" className="bg-white py-24 sm:py-32 flex-grow">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl lg:mx-0">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Blog
+              </h2>
+              <p className="mt-2 text-lg leading-8 text-gray-600">
+              Welcome to my blog, Follow me on my journey of hacking, building and learning in the world of the web 
+              </p>
+            </div>
+            <ol className="place-content-center mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3" style={{ listStyle: `none` }}>
           {posts.map((post) => {
             const title = post.frontmatter.title || post.fields.slug;
 
             return (
-              <li className="m-10" key={post.fields.slug}>
+              <li className="m-10 min-w-96" key={post.fields.slug}>
                 <img className="size-64 rounded-md" src={post.frontmatter.image} />
                 <article
                   className="post-list-item"
@@ -67,7 +72,8 @@ const BlogIndex = ({ data, location }) => {
             );
           })}
         </ol>
-      </div>
+          </div>
+        </div>
     </>
   );
 };

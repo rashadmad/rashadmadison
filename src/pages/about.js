@@ -37,7 +37,7 @@ const aboutPage = ({ data }) => {
     <div className="flex-grow flex flex-col min-h-screen">
       <Nav page="about"></Nav>
       <main class="mx-auto max-w-7xl px-6 lg:px-8">
-      <h1>Meet Rashad</h1>
+      <h1 className="text-xl md:text-6xl lg:text-7xl font-bold mb-6 mt-6 text-sky-400">Meet Rashad</h1>
         <div class="mx-auto mt-20 grid max-w-2xl grid-cols-1 h-full gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 ">
           <div class="lg:pr-8 lg:pt-4">
             <div class="lg:max-w-lg">
