@@ -41,6 +41,12 @@ const Nav = ({ page }) => {
         >
           Blog
         </GatsbyLink>
+        <GatsbyLink
+          className={page === "login" ? activeButton : regularButton}
+          to="/loginPage"
+        >
+          Sign In
+        </GatsbyLink>
       </div>
     </nav>
   );

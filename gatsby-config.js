@@ -10,7 +10,7 @@
 module.exports = {
   siteMetadata: {
     title: `Rashad Madison: Fullstack | Frontend | Design`,
-    description: `Rashad is here to fulfill all of your Software engineering & Design needs get in touch.`,
+    description: `Rashad is here to fulfill all of your Software engineering & Design needs.`,
     author: `Rashad J Madison`,
     siteUrl: `https://rashadmadison.com/`,
   },

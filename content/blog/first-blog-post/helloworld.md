@@ -6,7 +6,7 @@ date: "2024-24-06"
 image: "https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?q=80&w=2565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ---
 
-# So What I Have Been Up To
+# So What Have I Been Up To
 Hello, I'm Rashad I'm a passionate developer with strong design skills. I have decided to start journaling my experiences as an engineer and creator. I think I have a non-traditional path to the world of engineering. I have some crazy stories to tell.
 
  
