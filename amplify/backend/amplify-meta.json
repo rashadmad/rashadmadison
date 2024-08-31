@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-rashadmadison-dev-63a29-authRole",
+      "UnauthRoleArn": "arn:aws:iam::324670981074:role/amplify-rashadmadison-dev-63a29-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::324670981074:role/amplify-rashadmadison-dev-63a29-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-rashadmadison-dev-63a29-deployment",
+      "UnauthRoleName": "amplify-rashadmadison-dev-63a29-unauthRole",
+      "StackName": "amplify-rashadmadison-dev-63a29",
+      "StackId": "arn:aws:cloudformation:us-east-1:324670981074:stack/amplify-rashadmadison-dev-63a29/78e9ef80-6662-11ef-832e-0e5ac05c0983",
+      "AmplifyAppId": "d1tesuls3ic9gx"
+    }
+  },
+  "auth": {
+    "rashadmadison2e75acf7": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-rashadmadison-dev-63a29-deployment/amplify-cfn-templates/auth/rashadmadison2e75acf7-cloudformation-template.json",
+        "logicalId": "authrashadmadison2e75acf7"
+      },
+      "lastPushTimeStamp": "2024-08-30T01:05:34.773Z",
+      "output": {
+        "UserPoolId": "us-east-1_uz2sYitjS",
+        "AppClientIDWeb": "6sjsea7p1omkl2jhhqpf1fjnqq",
+        "AppClientID": "2inbm4j2p6o8lqmjg4rqabc7nk",
+        "IdentityPoolId": "us-east-1:65b69828-d81f-4a4a-8afe-70019c8a8d41",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:324670981074:userpool/us-east-1_uz2sYitjS",
+        "IdentityPoolName": "rashadmadison2e75acf7_identitypool_2e75acf7__dev",
+        "UserPoolName": "rashadmadison2e75acf7_userpool_2e75acf7"
+      },
+      "lastPushDirHash": "c2aLp5/2BguTvUu395f8Gf7h0ag="
+    }
+  }
+}

@@ -32,6 +32,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-tailwindcss": "^3.17.4",
     "gatsby-plugin-postcss": "^6.13.1",
     "postcss": "^8.4.41",
     "prettier": "^2.8.8",
@@ -53,6 +56,7 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore"
   }
 }

@@ -5,21 +5,22 @@ import logo from "../images/color_logo.svg";
 
 const LoginPage = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Nav page="login" />
-      <div className="flex min-h-full min-w-20 flex-1 md:ml-64 md:mr-64 md:mt-6">
+      <div className="flex flex-1">
         <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
-
-          <img className="ml-32 w-32 m-2" src={logo} alt="logo" />
             <div>
+            <img className="inline w-40 m-2 ml-32" src={logo} alt="logo" />
               <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
-                Sign in to your Business Partner account
+                Sign in to your 
+                <br></br>
+                Business Partner account
               </h2>
               <p className="mt-2 text-sm leading-6 text-gray-500">
-                Not a Partner?{' '}
-                <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
-                  Create a Business Partner account
+                Not a Business Partner?{' '}
+                <a href="#" className="font-semibold text-sky-400 hover:text-indigo-500">
+                  Sign up as Business Partner
                 </a>
               </p>
             </div>
@@ -72,7 +73,7 @@ const LoginPage = () => {
                   </div>
 
                   <div className="text-sm leading-6">
-                    <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <a href="#" className="font-semibold text-sky-400 hover:text-indigo-500">
                       Forgot password?
                     </a>
                   </div>
@@ -81,7 +82,7 @@ const LoginPage = () => {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-sky-400 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="flex w-full justify-center rounded-md sky-400 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm bg-sky-400  hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Sign in
                   </button>
@@ -94,11 +95,11 @@ const LoginPage = () => {
                     <div className="w-full border-t border-gray-200" />
                   </div>
                   <div className="relative flex justify-center text-sm font-medium leading-6">
-                    <span className="bg-white px-6 text-gray-900">Or sign up through</span>
+                    <span className="bg-white px-6 text-gray-900">Or continue with</span>
                   </div>
                 </div>
 
-                <div className="mt-6 grid">
+                <div className="mt-6">
                   <a
                     href="#"
                     className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:ring-transparent"
@@ -121,7 +122,7 @@ const LoginPage = () => {
                         fill="#34A853"
                       />
                     </svg>
-                    <span className="text-sm font-semibold leading-6">Google</span>
+                    <a className="text-sm font-semibold leading-6 no-underline">Google</a>
                   </a>
                 </div>
               </div>
@@ -131,12 +132,15 @@ const LoginPage = () => {
         <div className="relative hidden w-0 flex-1 lg:block">
           <img
             alt=""
-            src="https://images.unsplash.com/photo-1579547621113-e4bb2a19bdd6?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="xs:hidden absolute inset-0 h-full w-full object-cover"
+            src="https://images.unsplash.com/photo-1548159417-f283998827c1?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
       </div>
-    </>
+      <footer className="mt-auto bg-gray-800 text-white text-center p-4">
+        © 2024 Your Company. All rights reserved.
+      </footer>
+    </div>
   );
 };
 
