@@ -1,14 +1,14 @@
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
 import * as React from "react";
-
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 const BlogCard = ({ title, index, slug, img, imgAlt, headLine, source }) => {
   return (
     <li
       key={index}
-      className="h-[150px] max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-4"
+      className="m-4 mx-auto h-[150px] max-w-md overflow-hidden rounded-xl bg-white shadow-md md:max-w-2xl"
     >
       <div className="md:flex">
         <div className="md:shrink-0">
@@ -19,13 +19,13 @@ const BlogCard = ({ title, index, slug, img, imgAlt, headLine, source }) => {
           />
         </div>
         <div className="p-8">
-          <div className="uppercase tracking-wide text-sm text-sky-400 font-semibold">
+          <div className="text-sm font-semibold uppercase tracking-wide text-sky-400">
             {title}
           </div>
           <Link
             to={slug}
             target="_blank"
-            className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+            className="mt-1 block text-lg font-medium leading-tight text-black hover:underline"
           >
             <FontAwesomeIcon icon={faEye} /> Read
           </Link>
@@ -36,6 +36,17 @@ const BlogCard = ({ title, index, slug, img, imgAlt, headLine, source }) => {
       </div>
     </li>
   );
+};
+
+// Define prop types
+BlogCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  slug: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  imgAlt: PropTypes.string.isRequired,
+  headLine: PropTypes.string.isRequired,
+  source: PropTypes.string, // Since 'source' is defined but not used, consider removing it or using it
 };
 
 export default BlogCard;

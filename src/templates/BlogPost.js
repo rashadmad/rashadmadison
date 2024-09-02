@@ -2,11 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import Nav from "../components/nav";
-import {
-  CloudArrowUpIcon,
-  LockClosedIcon,
-  ServerIcon,
-} from "@heroicons/react/20/solid";
+import PropTypes from 'prop-types';
 
 export default function PageTemplate({ data, children }) {
   const { markdownRemark: post } = data;
@@ -15,11 +11,11 @@ export default function PageTemplate({ data, children }) {
   return (
     <>
       <Seo
-        title={data.markdownRemark.frontmatter.title}
+        title={frontmatter.title}
         description={frontmatter.description}
       />
-      <Nav page="blog"></Nav>
-      <div className="flex justify-center mt-20 px-4">
+      <Nav page="blog" />
+      <div className="mt-20 flex justify-center px-4">
         <div className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
           <div className="absolute inset-0 -z-10 overflow-hidden">
             <svg
@@ -57,29 +53,29 @@ export default function PageTemplate({ data, children }) {
               <div className="lg:pr-4">
                 <div className="lg:max-w-lg">
                   <p className="text-base font-semibold leading-7 text-sky-600">
-                    By {data.markdownRemark.frontmatter.author}
+                    By {frontmatter.author}
                   </p>
                   <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                    {data.markdownRemark.frontmatter.title}
+                    {frontmatter.title}
                   </h1>
-                  <p className="mt-6 text-md leading-8 text-white bg-orange-400 p-3 rounded-lg">
-                    {data.markdownRemark.frontmatter.description}
+                  <p className="text-base mt-6 rounded-lg bg-orange-400 p-3 leading-8 text-white">
+                    {frontmatter.description}
                   </p>
                 </div>
               </div>
             </div>
             <div className="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
               <img
-                className="w-[48rem] h-[27rem] lg:h-auto max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] min-w-3"
-                src={data.markdownRemark.frontmatter.image}
+                className="h-[27rem] w-[48rem] min-w-3 max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] lg:h-auto"
+                src={frontmatter.image}
                 alt=""
               />
             </div>
             <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
               <div className="lg:pr-4">
                 <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
-                <div className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
-                {children}
+                  <div className="markdown" dangerouslySetInnerHTML={{ __html: post.html }} />
+                  {children}
                 </div>
               </div>
             </div>
@@ -89,6 +85,22 @@ export default function PageTemplate({ data, children }) {
     </>
   );
 }
+
+// Prop types validation
+PageTemplate.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+      }).isRequired,
+      html: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  children: PropTypes.node,
+};
 
 export const pageQuery = graphql`
   query BlogPostBySlug(

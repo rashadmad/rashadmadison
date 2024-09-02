@@ -7,12 +7,12 @@ const activeButton = "text-slate-400 text-sm px-4 py-2 leading-none rounded-full
 
 const Nav = ({ page }) => {
   return (
-    <nav className="z-20 w-full text-center md:z-30 md:top-0 md:left-0 md:right-0 bg-white md:text-white py-3 md:px-4 md:flex items-center justify-between shadow-md">
+    <nav className="z-20 w-full items-center justify-between bg-white py-3 text-center shadow-md md:inset-x-0 md:top-0 md:z-30 md:flex md:px-4 md:text-white">
       <a
-        className="md:block md:text-black md:text-xl md:tracking-tight md:no-underline md:appearance-none hidden"
+        className="hidden md:block md:appearance-none md:text-xl md:tracking-tight md:text-black md:no-underline"
         href="/"
       >
-        <img className="inline w-10 m-2" src={logo} alt="logo" />Rashad Madison | Software Engineer
+        <img className="m-2 inline w-10" src={logo} alt="logo" />Rashad Madison | Software Engineer
       </a>
       <div className="text-center">
         <GatsbyLink

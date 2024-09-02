@@ -1,12 +1,6 @@
-/**
- * SEO component that queries for data with
- * Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import * as React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
 
 function Seo({ description, title, children }) {
   const { site } = useStaticQuery(
@@ -20,10 +14,10 @@ function Seo({ description, title, children }) {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata?.title;
 
   return (
     <>
@@ -32,10 +26,21 @@ function Seo({ description, title, children }) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       {children}
     </>
-  )
+  );
 }
 
-export default Seo
+Seo.propTypes = {
+  description: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node,
+};
+
+Seo.defaultProps = {
+  description: '',
+  children: null,
+};
+
+export default Seo;

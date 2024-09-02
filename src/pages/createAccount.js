@@ -5,13 +5,13 @@ import logo from "../images/color_logo.svg";
 
 const createAccount = ({ Data }) => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <Nav page="login" />
       <div className="flex flex-1">
         <div className="flex flex-1 flex-col justify-center px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
           <div className="mx-auto w-full max-w-sm lg:w-96">
             <div>
-              <img className="inline w-40 m-2 ml-32" src={logo} alt="logo" />
+              <img className="m-2 ml-32 inline w-40" src={logo} alt="logo" />
               <h2 className="mt-8 text-2xl font-bold leading-9 tracking-tight text-gray-900">
                 Create a Business Partner account
               </h2>
@@ -39,7 +39,7 @@ const createAccount = ({ Data }) => {
                 </div>
 
                 <div>
-                  <div className="flex col gap-1.5 ">
+                  <div className="col flex gap-1.5 ">
                     <div className="flex-1 gap-4">
                       <div>
                         <label
@@ -80,7 +80,7 @@ const createAccount = ({ Data }) => {
                 </div>
 
                 <div>
-                  <div className="flex col gap-1.5 ">
+                  <div className="col flex gap-1.5 ">
                     <div className="flex-1 gap-4">
                       <div>
                         <label
@@ -161,7 +161,7 @@ const createAccount = ({ Data }) => {
                       id="remember-me"
                       name="remember-me"
                       type="checkbox"
-                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-sky-400"
+                      className="size-4 rounded border-gray-300 text-indigo-600 focus:ring-sky-400"
                     />
                     <label
                       htmlFor="remember-me"
@@ -175,7 +175,7 @@ const createAccount = ({ Data }) => {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md sky-400 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm bg-sky-400  hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="sky-400 flex w-full justify-center rounded-md bg-sky-400 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm  hover:bg-sky-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
                     Sign in
                   </button>
@@ -203,7 +203,7 @@ const createAccount = ({ Data }) => {
                     <svg
                       viewBox="0 0 24 24"
                       aria-hidden="true"
-                      className="h-5 w-5"
+                      className="size-5"
                     >
                       <path
                         d="M12.0003 4.75C13.7703 4.75 15.3553 5.36002 16.6053 6.54998L20.0303 3.125C17.9502 1.19 15.2353 0 12.0003 0C7.31028 0 3.25527 2.69 1.28027 6.60998L5.27028 9.70498C6.21525 6.86002 8.87028 4.75 12.0003 4.75Z"
@@ -235,11 +235,11 @@ const createAccount = ({ Data }) => {
           <img
             alt=""
             src="https://images.unsplash.com/photo-1548159417-f283998827c1?q=80&w=4140&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 size-full object-cover"
           />
         </div>
       </div>
-      <footer className="mt-auto bg-gray-800 text-white text-center p-4">
+      <footer className="mt-auto bg-gray-800 p-4 text-center text-white">
         © 2024 Your Company. All rights reserved.
       </footer>
     </div>

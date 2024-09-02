@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import PropTypes from "prop-types"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -30,6 +31,12 @@ const UsingSSR = ({ serverData }) => {
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   )
+}
+
+UsingSSR.propTypes = {
+  serverData: PropTypes.shape({
+    message: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export const Head = () => <Seo title="Using SSR" />
