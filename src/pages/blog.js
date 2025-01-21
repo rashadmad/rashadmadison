@@ -1,128 +1,61 @@
-import * as React from "react";
-import PropTypes from "prop-types"; // Import PropTypes
-import { Link, graphql } from "gatsby";
+import React from "react";
+import { graphql } from "gatsby";
 import Seo from "../components/seo";
-import Nav from "../components/nav";
-import { Link as GatsbyLink } from "gatsby";
 
-const BlogIndex = ({ data }) => {
-  const posts = data.allMarkdownRemark.nodes;
-
-  if (posts.length === 0) {
-    return (
-      <p>
-        No blog posts found. Add markdown posts to &quot;content/blog&quot; (or the
-        directory you specified for the &quot;gatsby-source-filesystem&quot; plugin in
-        gatsby-config.js).
-      </p>
-    );
-  }
+const BlogPostTemplate = ({ data }) => {
+  const post = data.markdownRemark;
+  const siteTitle = data.site.siteMetadata?.title || `Title`;
 
   return (
     <>
-      <Nav page="blog" />
-      <div id="portfolio" className="grow bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Blog
-            </h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
-              Welcome to my blog. Follow me on my journey of hacking, building, and learning in the world of the web.
-            </p>
-          </div>
-          <ol className="mx-auto mt-10 grid max-w-2xl grid-cols-1 place-content-center gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3" style={{ listStyle: `none` }}>
-            {posts.map((post) => {
-              const title = post.frontmatter.title || post.fields.slug;
-
-              return (
-                <li className="m-10 min-w-96" key={post.fields.slug}>
-                  <img className="size-64 rounded-md" src={post.frontmatter.image} alt={title} />
-                  <article
-                    className="post-list-item"
-                    itemScope
-                    itemType="http://schema.org/Article"
-                  >
-                    <header>
-                      <h2>
-                        <Link to={post.fields.slug} itemProp="url">
-                          <span className="text-sky-400" itemProp="headline">
-                            {title}
-                          </span>
-                        </Link>
-                      </h2>
-                      <small>{post.date}</small>
-                    </header>
-                    <section>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: post.frontmatter.description || post.excerpt,
-                        }}
-                        itemProp="description"
-                      />
-                    </section>
-                  </article>
-                  <GatsbyLink
-                    to={post.fields.slug}
-                    className="rounded-md bg-sky-400 px-6 py-3 font-bold text-white no-underline hover:bg-gray-600"
-                  >
-                    Read
-                  </GatsbyLink>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
-      </div>
+      <Seo
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+        image={post.frontmatter.image}
+      />
+      <article
+        className="blog-post"
+        itemScope
+        itemType="http://schema.org/Article"
+      >
+        <header>
+          <h1 itemProp="headline">{post.frontmatter.title}</h1>
+          <p>{post.frontmatter.date}</p>
+        </header>
+        <section
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          itemProp="articleBody"
+        />
+        <hr />
+        <footer>
+          <p>Author: {data.site.siteMetadata.author}</p>
+        </footer>
+      </article>
     </>
   );
 };
 
-BlogIndex.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      nodes: PropTypes.arrayOf(
-        PropTypes.shape({
-          excerpt: PropTypes.string,
-          fields: PropTypes.shape({
-            slug: PropTypes.string.isRequired,
-          }),
-          frontmatter: PropTypes.shape({
-            date: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-            description: PropTypes.string,
-            image: PropTypes.string.isRequired,
-          }),
-        })
-      ),
-    }),
-  }).isRequired,
-  location: PropTypes.object, // Add PropTypes validation for location if used
-};
-
-export default BlogIndex;
-
-export const Head = () => <Seo title="All posts" />;
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  {
+  query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
         title
+         author {
+          name
+        }
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "YYYY-MM-DD")
-          title
-          description
-          image
-        }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      id
+      excerpt(pruneLength: 160)
+      html
+      frontmatter {
+        title
+        date(formatString: "MMMM DD, YYYY")
+        description
+        image
       }
     }
   }

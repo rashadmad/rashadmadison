@@ -1,8 +1,10 @@
-import * as React from "react";
+// filepath: /Users/rashadmadison/Documents/Projects/rashadmadison/src/components/seo.js
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 
-function Seo({ description, title, children }) {
+const Seo = ({ description, lang, meta, title, image }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -10,6 +12,7 @@ function Seo({ description, title, children }) {
           siteMetadata {
             title
             description
+            siteUrl
           }
         }
       }
@@ -17,30 +20,74 @@ function Seo({ description, title, children }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const metaImage = image ? `${site.siteMetadata.siteUrl}${image}` : null;
 
   return (
-    <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
-      <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={metaDescription} />
-      <meta property="og:type" content="website" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      {children}
-    </>
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        metaImage && {
+          property: `og:image`,
+          content: metaImage,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        metaImage && {
+          name: `twitter:image`,
+          content: metaImage,
+        },
+      ].filter(Boolean).concat(meta)}
+    />
   );
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  children: PropTypes.node,
 };
 
 Seo.defaultProps = {
-  description: '',
-  children: null,
+  lang: `en`,
+  meta: [],
+  description: ``,
+  image: null,
+};
+
+Seo.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string,
 };
 
 export default Seo;
