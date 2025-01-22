@@ -14,6 +14,7 @@ module.exports = {
     author: {
       name: `Rashad J Madison`,
     },
+    Image: `src/images/color_logo.svg`,
     siteUrl: `https://rashadmadison.com/`,
   },
   plugins: [
