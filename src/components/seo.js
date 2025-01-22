@@ -14,6 +14,7 @@ const Seo = ({ description, lang, meta, title, image, keywords, publishedTime, m
             description
             siteUrl
             author
+            image
           }
         }
       }
@@ -21,7 +22,7 @@ const Seo = ({ description, lang, meta, title, image, keywords, publishedTime, m
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaImage = image ? `${site.siteMetadata.siteUrl}${image}` : null;
+  const metaImage = image ? `${site.siteMetadata.siteUrl}${image}` : `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`;
   const metaKeywords = keywords || [];
 
   return (
