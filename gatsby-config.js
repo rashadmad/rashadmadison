@@ -14,14 +14,21 @@ module.exports = {
     author: {
       name: `Rashad J Madison`,
     },
-    Image: `src/images/color_logo.svg`,
+    image: `src/images/color_logo.svg`,
     siteUrl: `https://rashadmadison.com/`,
+    keywords: `Fullstack, Frontend, Design, Software Engineering`,
+    social: {
+      twitter: `rashadmadison`,
+      linkedin: `rashadmadison`,
+    },
   },
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
