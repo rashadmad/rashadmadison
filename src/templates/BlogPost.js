@@ -8,6 +8,12 @@ export default function PageTemplate({ data, children }) {
   const { markdownRemark: post } = data;
   const { frontmatter } = post;
 
+  if (!post) {
+    return <p>Post not found</p>;
+  }
+
+  const canonicalUrl = typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : '';
+
   return (
     <>
       <Seo

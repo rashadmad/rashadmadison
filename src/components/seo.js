@@ -1,10 +1,9 @@
-// filepath: /Users/rashadmadison/Documents/Projects/rashadmadison/src/components/seo.js
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
-const Seo = ({ description, lang, meta, title, image, keywords, publishedTime, modifiedTime }) => {
+const Seo = ({ description, lang, meta, title, image, keywords, publishedTime, modifiedTime, canonicalUrl }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -13,8 +12,9 @@ const Seo = ({ description, lang, meta, title, image, keywords, publishedTime, m
             title
             description
             siteUrl
-            author
-            image
+            author {
+              name
+            }
           }
         }
       }
@@ -22,7 +22,7 @@ const Seo = ({ description, lang, meta, title, image, keywords, publishedTime, m
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const metaImage = image ? `${site.siteMetadata.siteUrl}${image}` : `${site.siteMetadata.siteUrl}${site.siteMetadata.image}`;
+  const metaImage = image ? `${site.siteMetadata.siteUrl}${image}` : null;
   const metaKeywords = keywords || [];
 
   return (
@@ -35,7 +35,7 @@ const Seo = ({ description, lang, meta, title, image, keywords, publishedTime, m
       link={[
         {
           rel: `canonical`,
-          href: `${site.siteMetadata.siteUrl}${location.pathname}`,
+          href: canonicalUrl,
         },
       ]}
       meta={[
@@ -65,7 +65,7 @@ const Seo = ({ description, lang, meta, title, image, keywords, publishedTime, m
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.author.name,
         },
         {
           name: `twitter:title`,
@@ -108,6 +108,7 @@ Seo.defaultProps = {
   keywords: [],
   publishedTime: null,
   modifiedTime: null,
+  canonicalUrl: '',
 };
 
 Seo.propTypes = {
@@ -119,6 +120,7 @@ Seo.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   publishedTime: PropTypes.string,
   modifiedTime: PropTypes.string,
+  canonicalUrl: PropTypes.string,
 };
 
 export default Seo;

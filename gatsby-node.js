@@ -92,7 +92,7 @@ exports.createSchemaCustomization = ({ actions }) => {
   // This way the "MarkdownRemark" queries will return `null` even when no
   // blog posts are stored inside "content/blog" instead of returning an error
   createTypes(`
-    type SiteSiteMetadata {
+    type SiteMetadata {
       author: author
       siteUrl: String
       social: Social

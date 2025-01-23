@@ -1,12 +1,5 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
+const awsmobile = require('./src/aws-exports');
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
     title: `Rashad Madison: Fullstack | Frontend | Design`,
@@ -14,21 +7,14 @@ module.exports = {
     author: {
       name: `Rashad J Madison`,
     },
-    image: `src/images/color_logo.svg`,
     siteUrl: `https://rashadmadison.com/`,
-    keywords: `Fullstack, Frontend, Design, Software Engineering`,
-    social: {
-      twitter: `rashadmadison`,
-      linkedin: `rashadmadison`,
-    },
   },
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-react-helmet`, // Ensure this line is present
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -120,12 +106,9 @@ module.exports = {
         name: `Gatsby Starter Blog`,
         short_name: `Rashad Site`,
         start_url: `/`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/color_logo.svg`, // This path is relative to the root of the site.
+        icon: `src/images/color_logo.svg`, 
       },
-    },
+    }
   ],
 }
