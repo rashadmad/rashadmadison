@@ -1,4 +1,3 @@
-const awsmobile = require('./src/aws-exports');
 
 module.exports = {
   siteMetadata: {
