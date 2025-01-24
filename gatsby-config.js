@@ -13,7 +13,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-react-helmet`, // Ensure this line is present
+    `gatsby-plugin-react-helmet`, 
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -106,7 +106,7 @@ module.exports = {
         short_name: `Rashad Site`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `src/images/color_logo.svg`, 
+        icon: `static/profileimage.png`, 
       },
     }
   ],
