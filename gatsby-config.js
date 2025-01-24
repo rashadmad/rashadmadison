@@ -7,6 +7,7 @@ module.exports = {
       name: `Rashad J Madison`,
     },
     siteUrl: `https://rashadmadison.com/`,
+    image: `/profileimage.png`
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -106,7 +107,7 @@ module.exports = {
         short_name: `Rashad Site`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `static/profileimage.png`, 
+        icon: `static/favicon.png`, 
       },
     }
   ],
