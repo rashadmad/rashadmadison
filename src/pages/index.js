@@ -11,10 +11,7 @@ import Nav from "../components/nav";
 import { faFile, faBook } from "@fortawesome/free-solid-svg-icons";
 
 const IndexPage = () => {
-  <Seo
-  title={frontmatter.title}
-  description={frontmatter.description}
-/>
+
   return (
     <div className="flex min-h-screen grow flex-col">
       <Banner
@@ -95,6 +92,23 @@ const IndexPage = () => {
     </div>
   );
 };
+export const Head = ({ data }) => (
+  <Seo
+    title="Home"
+    description="Welcome to my Gatsby site!"
+    image="/profileimage.png" // Ensure this path is correct
+    url={data.site.siteMetadata.siteUrl}
+  />
+);
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+  }
+`;
 
 IndexPage.propTypes = {
   id: PropTypes.string,
@@ -107,14 +121,5 @@ IndexPage.propTypes = {
   live: PropTypes.string,
   source: PropTypes.string,
 };
-
-export function Head() {
-  return (
-    <>
-      <html lang="en" className="scroll-smooth" />
-      <Seo title="Home" />
-    </>
-  );
-}
 
 export default IndexPage;
