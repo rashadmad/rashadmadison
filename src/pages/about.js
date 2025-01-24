@@ -31,6 +31,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const aboutPage = ({ data }) => {
+  <Seo
+  title={frontmatter.title}
+  description={frontmatter.description}
+/>
   return (
     <div className="flex min-h-screen grow flex-col">
       <Nav page="about"></Nav>

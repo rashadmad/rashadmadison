@@ -11,6 +11,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const aboutPage = () => {
+  <Seo
+  title={frontmatter.title}
+  description={frontmatter.description}
+/>
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
       <nav className="fixed inset-x-0 top-0 z-30 flex items-center justify-between bg-white px-4 py-3 text-white shadow-md">

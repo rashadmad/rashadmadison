@@ -4,6 +4,10 @@ import Nav from "../components/nav";
 import logo from "../images/color_logo.svg";
 
 const createAccount = ({ Data }) => {
+  <Seo
+  title={frontmatter.title}
+  description={frontmatter.description}
+/>
   return (
     <div className="flex min-h-screen flex-col">
       <Nav page="login" />

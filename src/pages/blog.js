@@ -17,6 +17,10 @@ const BlogIndex = ({ data }) => {
       </p>
     );
   }
+  <Seo
+  title={frontmatter.title}
+  description={frontmatter.description}
+/>
 
   return (
     <>
