@@ -11,6 +11,10 @@ import Nav from "../components/nav";
 import { faFile, faBook } from "@fortawesome/free-solid-svg-icons";
 
 const IndexPage = () => {
+  <Seo
+  title={frontmatter.title}
+  description={frontmatter.description}
+/>
   return (
     <div className="flex min-h-screen grow flex-col">
       <Banner
