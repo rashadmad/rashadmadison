@@ -19,6 +19,7 @@ export default function PageTemplate({ data, children }) {
       <Seo
         title={frontmatter.title}
         description={frontmatter.description}
+        image={frontmatter.image}
       />
       <Nav page="blog" />
       <div className="mt-20 flex justify-center px-4">

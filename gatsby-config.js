@@ -6,6 +6,7 @@ module.exports = {
     author: {
       name: `Rashad J Madison`,
     },
+    Image: `/profileimage.png`,
     siteUrl: `https://rashadmadison.com/`,
     image: `/profileimage.png`
   },
