@@ -24,59 +24,30 @@ const BlogIndex = ({ data }) => {
 
   return (
     <>
-      <Nav page="blog" />
-      <div id="portfolio" className="grow bg-white py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:mx-0">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Blog
-            </h2>
-            <p className="mt-2 text-lg leading-8 text-gray-600">
-              Welcome to my blog. Follow me on my journey of hacking, building, and learning in the world of the web.
-            </p>
-          </div>
-          <ol className="mx-auto mt-10 grid max-w-2xl grid-cols-1 place-content-center gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3" style={{ listStyle: `none` }}>
-            {posts.map((post) => {
-              const title = post.frontmatter.title || post.fields.slug;
-
-              return (
-                <li className="m-10 min-w-96" key={post.fields.slug}>
-                  <img className="size-64 rounded-md" src={post.frontmatter.image} alt={title} />
-                  <article
-                    className="post-list-item"
-                    itemScope
-                    itemType="http://schema.org/Article"
-                  >
-                    <header>
-                      <h2>
-                        <Link to={post.fields.slug} itemProp="url">
-                          <span className="text-sky-400" itemProp="headline">
-                            {title}
-                          </span>
-                        </Link>
-                      </h2>
-                      <small>{post.frontmatter.date}</small>
-                    </header>
-                    <section>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: post.frontmatter.description || post.excerpt,
-                        }}
-                        itemProp="description"
-                      />
-                    </section>
-                  </article>
-                  <GatsbyLink
-                    to={post.fields.slug}
-                    className="rounded-md bg-sky-400 px-6 py-3 font-bold text-white no-underline hover:bg-gray-600"
-                  >
-                    Read
-                  </GatsbyLink>
-                </li>
-              );
-            })}
-          </ol>
-        </div>
+      <Seo
+        title="Rashad's Blog"
+        description="Welcome to my blog where I share my hacking adventures and knowledge."
+        image={colorLogo}
+      />
+      <div className="blog-list">
+        <h1>Blog Posts</h1>
+        <ul>
+          {posts.map(({ node }) => (
+            <li key={node.fields.slug}>
+              <article
+                className="blog-post"
+                itemScope
+                itemType="http://schema.org/Article"
+              >
+                <Link to={node.fields.slug}>
+                  <h2>{node.frontmatter.title}</h2>
+                  <p>{node.frontmatter.date}</p>
+                  <p>{node.excerpt}</p>
+                </Link>
+              </article>
+            </li>
+          ))}
+        </ul>
       </div>
     </>
   );
