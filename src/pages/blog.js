@@ -18,8 +18,8 @@ const BlogIndex = ({ data }) => {
     );
   }
   <Seo
-  title={frontmatter.title}
-  description={frontmatter.description}
+  title="Rashads Blog"
+  description="Welcome to my blog where I discuss my adventures in hacking and learning on the web."
 />
 
   return (

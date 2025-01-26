@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link as GatsbyLink } from "gatsby";
 import Nav from "../components/nav";
 import { faFile, faBook } from "@fortawesome/free-solid-svg-icons";
+import { graphql } from 'gatsby'
 
 const IndexPage = () => {
 

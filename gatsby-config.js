@@ -6,7 +6,6 @@ module.exports = {
     author: {
       name: `Rashad J Madison`,
     },
-    Image: `/profileimage.png`,
     siteUrl: `https://rashadmadison.com/`,
     image: `/profileimage.png`
   },
@@ -108,7 +107,7 @@ module.exports = {
         short_name: `Rashad Site`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `static/favicon.png`, 
+        icon: `src/images/color_logo.svg`, 
       },
     }
   ],
