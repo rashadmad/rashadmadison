@@ -12,8 +12,9 @@ import {
 
 const aboutPage = () => {
   <Seo
-  title={frontmatter.title}
-  description={frontmatter.description}
+  title="About"
+  description="Learn more about Rashad J Madison"
+  image="/logo.png"
 />
   return (
     <div className="overflow-hidden bg-white py-24 sm:py-32">
