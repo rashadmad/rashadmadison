@@ -5,6 +5,7 @@ import Data from "../data/data";
 import PortfolioCard from "../components/PortfolioCard";
 import Seo from "../components/seo";
 import logo from "../images/color_logo.svg";
+import gif from "../images/ArrowAnimation.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link as GatsbyLink } from "gatsby";
 import Nav from "../components/nav";
@@ -12,7 +13,6 @@ import { faFile, faBook } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from 'gatsby'
 
 const IndexPage = () => {
-
   return (
     <div className="flex min-h-screen grow flex-col">
       <Banner
@@ -52,6 +52,9 @@ const IndexPage = () => {
             </div>
             <div className="mt-8 md:mt-0 md:w-1/2 lg:w-1/3">
               <img className="w-full min-w-3.5" src={logo} alt="Hero Image" />
+            </div>
+            <div className="absolute mb-4 bottom-12 left-1/2 transform -translate-x-1/2">
+              <img src={gif} alt="Animated GIF" className="py-0" />
             </div>
           </div>
         </div>
