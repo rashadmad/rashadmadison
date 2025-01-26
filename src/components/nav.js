@@ -7,6 +7,7 @@ const activeButton = "text-slate-400 text-sm px-4 py-2 leading-none rounded-full
 
 const Nav = ({ page }) => {
   return (
+    <>
     <nav className="z-20 w-full items-center justify-between bg-white py-3 text-center shadow-md md:inset-x-0 md:top-0 md:z-30 md:flex md:px-4 md:text-white">
       <a
         className="hidden md:block md:appearance-none md:text-xl md:tracking-tight md:text-black md:no-underline"
@@ -49,6 +50,8 @@ const Nav = ({ page }) => {
         </GatsbyLink>
       </div>
     </nav>
+    <div className="border-b border-gray-200"></div>
+    </>
   );
 };
 

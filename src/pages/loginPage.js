@@ -4,10 +4,7 @@ import Nav from '../components/nav';
 import logo from "../images/color_logo.svg";
 
 const LoginPage = () => {
-  <Seo
-  title={frontmatter.title}
-  description={frontmatter.description}
-/>
+
   return (
     <div className="flex min-h-screen flex-col">
       <Nav page="login" />
@@ -148,6 +145,15 @@ const LoginPage = () => {
   );
 };
 
-export const Head = () => <Seo title="Login" />;
+export const Head = () => {
+  return (
+    <Seo
+      title="Login"
+      description="Login to your Business Partner account"
+      image="/logo.png"
+    />
+  );
+};
+
 
 export default LoginPage;

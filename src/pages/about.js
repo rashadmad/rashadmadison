@@ -32,8 +32,9 @@ import {
 
 const aboutPage = ({ data }) => {
   <Seo
-  title={frontmatter.title}
-  description={frontmatter.description}
+  title="About"
+  description="Learn more about Rashad J Madison"
+  image="/logo.png"
 />
   return (
     <div className="flex min-h-screen grow flex-col">

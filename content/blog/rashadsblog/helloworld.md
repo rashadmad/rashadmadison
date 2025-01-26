@@ -1,8 +1,9 @@
 ---
 title: "Hello World"
 author: "Rashad J Madison"
-description: "my name is Rashad and I have something to say. Welcome to my blog join my journey in chronicling my tech quest!"
-date: "2024-24-06"
+tagline: "The first of many"
+description: "Welcome, Join my journey in chronicling my tech quest!"
+date: "2024-06"
 image: "https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?q=80&w=2565&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ---
 

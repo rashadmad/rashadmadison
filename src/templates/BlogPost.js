@@ -17,8 +17,8 @@ export default function PageTemplate({ data, children }) {
   return (
     <>
       <Seo
-        title="Rashads Blog"
-        description="Welcome to my blog where I discuss my adventures of hacking and learning in the world of the web."
+        title={frontmatter.title}
+        description={frontmatter.description}
         image={frontmatter.image}
       />
       <Nav page="blog" />

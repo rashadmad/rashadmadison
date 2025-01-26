@@ -21,7 +21,6 @@ const IndexPage = () => {
         buttonText="Get in touch"
       />
       <Nav page="home" />
-      <div className="border-b border-gray-200"></div>
       <div className="gradient-background h-screen bg-gray-900 py-20">
         <div className="container sticky mx-auto max-w-7xl px-6 md:px-12">
           <div className="flex h-screen items-center justify-center">
