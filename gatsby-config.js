@@ -8,7 +8,7 @@ module.exports = {
       name: `Rashad J Madison`,
     },
     siteUrl: `https://rashadmadison.com/`,
-    image: `/profileimage.png`
+    image: `/src/images/profileimage.png`
   },
   plugins: [
     `gatsby-plugin-postcss`,
