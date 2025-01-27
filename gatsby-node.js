@@ -23,6 +23,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allMarkdownRemark {
         edges {
           node {
+            id
             fields {
               slug
             }
@@ -38,12 +39,17 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const posts = result.data.allMarkdownRemark.edges;
 
-  posts.forEach((post) => {
+  posts.forEach((post, index) => {
+    const previousPostId = index === 0 ? null : posts[index - 1].node.id;
+    const nextPostId = index === posts.length - 1 ? null : posts[index + 1].node.id;
+
     createPage({
       path: post.node.fields.slug,
       component: path.resolve("./src/templates/BlogPost.js"),
       context: {
-        slug: post.node.fields.slug,
+        id: post.node.id,
+        previousPostId,
+        nextPostId,
       },
     });
   });

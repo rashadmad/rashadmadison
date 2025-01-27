@@ -1,4 +1,3 @@
-
 module.exports = {
   siteMetadata: {
     title: `Rashad Madison: Fullstack | Frontend | Design`,
@@ -108,7 +107,7 @@ module.exports = {
         short_name: `Rashad's Site`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `src/images/color_logo.svg`, 
+        icon: `src/images/color_logo.svg`, // Ensure this path is correct
       },
     }
   ],
