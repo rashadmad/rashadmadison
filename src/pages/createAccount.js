@@ -4,10 +4,7 @@ import Nav from "../components/nav";
 import logo from "../images/color_logo.svg";
 
 const createAccount = ({ Data }) => {
-  <Seo
-  title="Business Partner"
-  description="Become a Business Partner with Madison Digital marketing"
-/>
+
   return (
     <div className="flex min-h-screen flex-col">
       <Nav page="login" />
@@ -250,6 +247,11 @@ const createAccount = ({ Data }) => {
   );
 };
 
-export const Head = () => <Seo title="Register" />;
+export const Head = () => {
+  <Seo
+  title="Business Partner"
+  description="Become a Business Partner with Madison Digital marketing"
+/>
+}
 
 export default createAccount;

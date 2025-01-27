@@ -105,6 +105,7 @@ export const Head = ({ data }) => (
     url={data.site.siteMetadata.siteUrl}
   />
 );
+
 export const query = graphql`
   query {
     site {

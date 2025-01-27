@@ -17,10 +17,6 @@ const BlogIndex = ({ data }) => {
       </p>
     );
   }
-  <Seo
-  title="Rashads Blog"
-  description="Welcome to my blog where I discuss my adventures in hacking and learning on the web."
-/>
 
   return (
     <>
@@ -108,8 +104,8 @@ export default BlogIndex;
 export const Head = () => {
   return (
     <Seo
-      title="Business Partner Login"
-      description="Login to your Business Partner account"
+      title="Rashads Login"
+      description="Welcome to my blog where I discuss my adventures in hacking and learning on the web."
       image="/logo.png"
     />
   );

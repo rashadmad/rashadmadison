@@ -8,7 +8,7 @@ module.exports = {
       name: `Rashad J Madison`,
     },
     siteUrl: `https://rashadmadison.com/`,
-    image: `/src/images/profileimage.png`
+    image: `/profileimage.png`
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -104,11 +104,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `Rashad Site`,
+        name: `Rashad Madison Portfolio Site`,
+        short_name: `Rashad's Site`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `src/images/color_logo.svg`, 
+        icon: `/color_logo.svg`, 
       },
     }
   ],
