@@ -4,13 +4,13 @@ import Banner from "../components/Banner";
 import Data from "../data/data";
 import PortfolioCard from "../components/PortfolioCard";
 import Seo from "../components/seo";
-import logo from "../images/color_logo.svg";
 import gif from "../images/ArrowAnimation.gif";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link as GatsbyLink } from "gatsby";
+import { Link as GatsbyLink, Link } from "gatsby";
 import Nav from "../components/nav";
 import { faFile, faBook } from "@fortawesome/free-solid-svg-icons";
 import { graphql } from 'gatsby'
+import logo from "../images/color_logo.svg";
 
 const IndexPage = () => {
   return (
@@ -54,7 +54,9 @@ const IndexPage = () => {
               <img className="w-full min-w-3.5" src={logo} alt="Hero Image" />
             </div>
             <div className="absolute mb-4 bottom-12 left-1/2 transform -translate-x-1/2">
-              <img src={gif} alt="Animated GIF" className="py-0" />
+              <Link to="#portfolio" className="text-white">
+                <img src={gif} alt="Animated GIF" className="py-0" />
+              </Link>
             </div>
           </div>
         </div>
@@ -99,7 +101,7 @@ export const Head = ({ data }) => (
   <Seo
     title="Home"
     description="Welcome to my Gatsby site!"
-    image="/profileimage.png" // Ensure this path is correct
+    image="/profileimage.png" 
     url={data.site.siteMetadata.siteUrl}
   />
 );
