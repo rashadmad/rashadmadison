@@ -108,7 +108,7 @@ module.exports = {
         short_name: `Rashad's Site`,
         start_url: `/`,
         display: `minimal-ui`,
-        icon: `/color_logo.svg`, 
+        icon: `src/images/color_logo.svg`, 
       },
     }
   ],
